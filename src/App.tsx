@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import SagVote from './views/SagVote';
 
-function App() {
+const App: React.FC = () => {
+  const [isVoting, setIsVoting] = useState<boolean>(false);
+
+  useEffect(() => {}, []);
+
+  if (isVoting) {
+    return (
+      <div>
+        Så stemmer vi!
+        <SagVote />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hej, velkommen til PolitikerMatch</h1>
+      <div>
+        Stem i 20 tilfældige afstemninger fra folketinget inden for det seneste år, og se hvilke(n)
+        politikere der har stemt ligesom dig!
+      </div>
+      <button onClick={() => setIsVoting(true)}>Begynd!</button>
     </div>
   );
-}
+};
 
 export default App;
