@@ -1,6 +1,13 @@
 import { MF } from '../models'
-import { fetch } from '../odata'
+import { fetch, fetchMultiple } from '../odata'
 
-export const getAllMF = () => {
-  return fetch<MF[]>("/Aktør?$filter=typeid eq 5");
+export const getMFsWithId = (ids: number[]) => {
+  const query = ids.map(id => {
+    return `id eq ${id}`
+  }).join(' or ');
+  return fetchMultiple<MF>(`/Aktør?$filter=${query}`);
+}
+
+export const getMF = (id: number) => {
+  return fetch<MF>(`/Aktør?$filter=id eq ${id}`);
 }

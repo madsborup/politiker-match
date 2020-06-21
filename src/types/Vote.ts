@@ -1,4 +1,6 @@
+export type VoteType = 'for' | 'imod'
+
 export type Vote = {
-  sagid: number
-  positive: boolean
+  afstemningsid: number
+  type: VoteType
 }

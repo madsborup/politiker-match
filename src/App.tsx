@@ -18,10 +18,10 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>Hej, velkommen til PolitikerMatch</h1>
+      <h1>PolitikerMatch</h1>
       <div>
-        Stem i 20 tilfældige afstemninger fra folketinget inden for det seneste år, og se hvilke(n)
-        politikere der har stemt ligesom dig!
+        Stem i 15 tilfældige afstemninger fra folketinget inden for det seneste halve år, og se hvilke(n)
+        politiker der har stemt tættest på dig!
       </div>
       <button onClick={() => setIsVoting(true)}>Begynd!</button>
     </div>

@@ -38,8 +38,8 @@ export const fetch = async <T>(path: string) => {
 export const fetchMultiple = async <T>(path: string) => {
   try {
     const response = await axios.get(`${SERVER_URL}${path}`);
-    const data: odataPayload<T> = await response.data;
-    const value: T | T[] = data.value
+    const data: odataPayload<T[]> = await response.data;
+    const value = data.value
 
     if (value) {
       if (data["odata.nextLink"] && value instanceof Array) {

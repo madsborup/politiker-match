@@ -24,6 +24,14 @@ export type Afstemning = {
   vedtaget: boolean
 }
 
+export type Stemme = {
+  id: number
+  afstemningid: number
+  aktørid: number
+  opdateringsdato: Date
+  typeid: number
+}
+
 export type Sagstrin = {
   dato: Date
   folketingstidende: string
